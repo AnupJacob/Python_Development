@@ -6,7 +6,6 @@ def mulresult(input1, input2):
     return input1 * input2
 def modresult(input1, input2):
     return input1 % input2
-
 def divresult(input1, input2):
     return input1 / input2
 
