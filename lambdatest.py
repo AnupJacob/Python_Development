@@ -15,3 +15,5 @@ y = int(input("Enter the second number :"))
 n = lambda x,y:x * y
 
 print(n(x,y))
+
+print("Thanks for using my application")
