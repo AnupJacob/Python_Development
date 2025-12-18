@@ -39,8 +39,28 @@ nums.length == 2n
 1 <= nums[i] <= 10^3
 
   '''
+'''
+Brute force solution:
+--------------------
+        p=[]
+        q=[]
+
+        result=[]
+
+        for i in range(0,n):
+            p.append(nums[i])
+            q.append(nums[i+n])
+        
+        for j in range(0,n):
+            result.append(p[j])
+            result.append(q[j])        
+    
+
+        return result
+'''
 
 
+#Optimal solution
 def shuffle(nums, n):
    result=[]
 
