@@ -42,19 +42,13 @@ nums.length == 2n
 
 
 def shuffle(nums, n):
-    p = q = []
+   result=[]
 
-    result = []
+   for i in range(0,n):
+       result.append(nums[i])
+       result.append(nums[i+n])
 
-    for i in range(0, n):
-        p.append(nums[i])
-        q.append(nums[i + n])
-
-    for j in range(0, n):
-        result.append(p[j])
-        result.append(q[j])
-
-    return result
+   return result
 
 if __name__ == '__main__':
-    print("The shuffled array is ",shuffle([1,1,2,2],2))
+    print("The shuffled array is ",shuffle([1,2,3,4,4,3,2,1],4))
