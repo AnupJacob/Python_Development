@@ -6,7 +6,7 @@
 # Created Date  : 18/12/2025
 # Modified Date : 18/12/2025
 # Description   :
-# Licensing     : Anup Jacob, LYIT
+# Licensing     : Anup Jacob, DevOps
 # ----------------------------------
 
 '''
