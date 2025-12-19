@@ -30,8 +30,18 @@ nums[i] is either 0 or 1.
 
 '''
 
-def max_consecutive_ones():
+def findMaxConsecutiveOnes(nums):
 
+    maxval = 0
+    result = 0
+    for i in nums:
+        if i == 1:
+            result += 1
+            maxval = max(maxval,result)
+        else:
+            result = 0
+
+    return maxval
 
 if __name__ == '__main__':
-    max_consecutive_ones()
+    print('The maximum consecutive ones is : ',findMaxConsecutiveOnes([1,1,0,1,1,1]))
