@@ -6,7 +6,7 @@
 # Created Date  : 29/12/2025
 # Modified Date : 29/12/2025
 # Description   :
-# Licensing     : Anup Jacob, LYIT
+# Licensing     : Anup Jacob, DevOps
 # ----------------------------------
 
 def arraysum(array1):
