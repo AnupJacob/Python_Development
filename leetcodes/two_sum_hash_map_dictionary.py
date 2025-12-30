@@ -53,11 +53,11 @@ def hashmaptwosum(numlist, target):
     print(numlist)
     print(len(numlist))
 
-    for i in range(0,len(numlist)):
+    for i in range(len(numlist)):
         if (target - numlist[i]) in numlist:
             dict1[i] = numlist[i]
-            print("Number: ",numlist[i]," at position : ",i)
             result.append(i)
+            print("Number: ",numlist[i]," at position : ",i)
 
     print(result)
     return dict1
