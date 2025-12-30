@@ -48,26 +48,39 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 def hashmaptwosum(numlist, target):
 
-    dict1 = {}
-    result = []
+#    dict1 = {}
     print(numlist)
     print(len(numlist))
 
+    result = {}
+
+    for i, num in enumerate(numlist):
+        diff = target - num
+        if diff in result:
+            print(result[diff], i)
+            break
+        result[num] = i
+
+
+'''
     for i in range(len(numlist)):
-        if (target - numlist[i]) in numlist:
+        temp = i
+        if (target - numlist[i]) in numlist :
             dict1[i] = numlist[i]
             result.append(i)
             print("Number: ",numlist[i]," at position : ",i)
+'''
 
-    print(result)
-    return dict1
+
 
 
 
 if __name__ == '__main__':
-
-    nums = [3,2,4]
-    target = 6
+    nums = [2,7,11,15]
+#    nums = [3,3]
+#    nums = [3,2,4]
+#    target = 6
+    target = 9
 
     hashmaptwosum(nums,target)
 
