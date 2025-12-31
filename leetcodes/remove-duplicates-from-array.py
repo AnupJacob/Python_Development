@@ -58,10 +58,19 @@ nums is sorted in non-decreasing order.
 
 def removeDuplicates(nums):
 
-    return
+    k = 0
+    samplelist = []
+    for i in nums:
+        if i not in samplelist:
+            samplelist.append(i)
+            k += 1
+    print(k)
+    print(samplelist)
+
+    return k, samplelist
 
 if __name__ == '__main__':
 
-    nums = []
+    nums = [0,0,1,1,1,2,2,3,3,4]
 
     removeDuplicates(nums)
