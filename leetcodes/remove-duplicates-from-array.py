@@ -56,18 +56,38 @@ nums is sorted in non-decreasing order.
 
 '''
 
+'''
+Brute force solution
+********************
 def removeDuplicates(nums):
 
     k = 0
     samplelist = []
-    for i in nums:
-        if i not in samplelist:
-            samplelist.append(i)
+    listlen = len(nums)
+    print("Number of elements is :",listlen)
+    for i in range(listlen-1,-1,-1):
+#        print(i)
+        if nums[i] not in samplelist:
+            samplelist.append(nums[i])
             k += 1
-    print(k)
-    print(samplelist)
+        elif nums[i] in samplelist:
+            nums.remove(nums[i])
+    print(nums)
 
     return k, samplelist
+
+'''
+# Optimal solution
+
+def removeDuplicates(nums):
+    m = 1
+    numslen = len(nums)
+    for i in range(1,numslen):
+        if nums[i] != nums[i-1]:
+            nums[m] = nums[i]
+            m += 1
+    print(nums)
+    return m
 
 if __name__ == '__main__':
 
