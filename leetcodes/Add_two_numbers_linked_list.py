@@ -42,13 +42,34 @@ It is guaranteed that the list represents a number that does not have leading ze
 '''
 
 def addTwoNumbers(l1, l2):
+    l1rev = []
+    l2rev = []
+    resultlist = []
+    suml1 = suml2 = 0
     print("The two lists are: ")
     print("L1: ",l1)
-    print("L2: ",l2)
-    return
+    for i in reversed(l1):
+        l1rev.append(i)
+        suml1 = suml1*10 + i
+        print(suml1)
+    for j in reversed(l2):
+        l2rev.append(j)
+        suml2 = suml2*10 + j
+        print(suml2)
+    sumlist = suml1 + suml2
+    print("Sum of the list is :",sumlist)
+
+    for i in range(len(str(sumlist))):
+        remnum = sumlist%10
+        sumlist = sumlist // 10
+        resultlist.append(remnum)
+#    print("Reversed l1 is :",l1rev)
+#    print("Reversed l2 is :",l2rev)
+#    print("L2: ",l2)
+    return resultlist
 
 if __name__ == '__main__':
     l1 = [2, 4, 3]
     l2 = [5, 6, 4]
 
-    addTwoNumbers(l1,l2)
+    print("The result list is :",addTwoNumbers(l1,l2))
