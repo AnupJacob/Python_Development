@@ -36,39 +36,42 @@ def addBinary(a,b):
     lena =len(a)
     lenb = len(b)
     print("Binary strings are :",a," and ",b)
-    print(lenb)
+    reva = ''.join(reversed(a))
+    revb = ''.join(reversed(b))
+    print(reva)
+    print(revb)
     carry = 0
     resultlist =[]
     for i in range(lena):
         for j in range(lenb):
             if i == j:
-                print("a[",i,"] : ",a[i])
-                print("b[",j,"] : ",b[j])
+                print("a[",i,"] : ",reva[i])
+                print("b[",j,"] : ",revb[j])
                 print("carry : ",carry)
                 print("**************************")
                 if carry == 0:
                     print("Carry 0")
-                    if a[i] == '1' and b[j] == '1':
+                    if reva[i] == '1' and revb[j] == '1':
                         resultlist.append(0)
-                        carry += 1
-                    elif a[i] == '1' and b[j] == '0':
+                        carry = 1
+                    elif reva[i] == '1' and revb[j] == '0':
                         resultlist.append(1)
-                    elif a[i] == '0' and b[j] == '1':
+                    elif reva[i] == '0' and revb[j] == '1':
                         resultlist.append(1)
-                    elif a[i] == '0' and b[j] == '0':
+                    elif reva[i] == '0' and revb[j] == '0':
                         resultlist.append(0)
                 elif carry == 1:
                     print("Carry 1")
-                    if a[i] == '1' and b[j] == '1':
+                    if reva[i] == '1' and revb[j] == '1':
                         resultlist.append(1)
-                        carry += 1
-                    elif a[i] == '1' and b[j] == '0':
+                        carry = 1
+                    elif reva[i] == '1' and revb[j] == '0':
                         resultlist.append(0)
-                        carry += 1
-                    elif a[i] == '0' and b[j] == '1':
+                        carry = 1
+                    elif reva[i] == '0' and revb[j] == '1':
                         resultlist.append(0)
-                        carry += 1
-                    elif a[i] == '0' and b[j] == '0':
+                        carry = 1
+                    elif reva[i] == '0' and revb[j] == '0':
                         resultlist.append(1)
     print(resultlist)
 
@@ -76,6 +79,6 @@ def addBinary(a,b):
 
 
 if __name__ == '__main__':
-    a = '1010'
-    b = '1011'
+    a = '11'
+    b = '1'
     print("The binary string after addition is : ",addBinary(a,b))
