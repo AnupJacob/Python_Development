@@ -48,9 +48,8 @@ def lengthOfLastWord(s):
     splitlist = s.split(" ")
     lenlist =len(splitlist)
     lastword = splitlist[lenlist-1]
-    lastwordlen = len(lastword)
 
-    return lastwordlen
+    return len(lastword)
 
 
 if __name__ == '__main__':
