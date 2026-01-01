@@ -32,7 +32,45 @@ Each string does not contain leading zeros except for the zero itself.
 
 '''
 
-def addBinary(a,b)
+def addBinary(a,b):
+    lena =len(a)
+    lenb = len(b)
+    print(lena)
+    print(lenb)
+    carry = 0
+    resultlist =[]
+    for i in range(lena):
+        for j in range(lenb):
+            if i == j:
+                print("I value of :",i)
+                print("a[",i,"] : ",a[i])
+                print("b[",j,"] : ",b[j])
+                print("carry : ",carry)
+                print("**************************")
+                if carry == 0:
+                    if a[i] == 1 and b[j] == 1:
+                            resultlist.append(0)
+                            carry += 1
+                    elif a[i] == 1 and b[j] == 0:
+                            resultlist.append(1)
+                    elif a[i] == 0 and b[j] == 1:
+                            resultlist.append(1)
+                    elif a[i] == 0 and b[j] == 0:
+                            resultlist.append(0)
+                elif carry == 1:
+                    if a[i] == 1 and b[j] == 1:
+                            resultlist.append(1)
+                            carry += 1
+                    elif a[i] == 1 and b[j] == 0:
+                            resultlist.append(0)
+                            carry += 1
+                    elif a[i] == 0 and b[j] == 1:
+                            resultlist.append(0)
+                            carry += 1
+                    elif a[i] == 0 and b[j] == 0:
+                            resultlist.append(1)
+    print(resultlist)
+
     return
 
 
