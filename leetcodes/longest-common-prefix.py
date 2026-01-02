@@ -39,16 +39,24 @@ strs[i] consists of only lowercase English letters if it is non-empty.
 def longestCommonPrefix(strs):
     first = min(strs)
     last = max(strs)
+    print("first :",first)
+    print("last :",last)
     ans = ""
     i = 0
 
     while i < len(first) and first[i] == last[i]:
+        print(first[i])
+        print(last[i])
         ans = ans + first[i]
         i += 1
+
+    if ans == "":
+        ans = "none"
+
 
     return ans
 
 
 if __name__ == '__main__':
-    strs = ["flower", "flow", "flight"]
+    strs = ["flower", "iflow", "flight"]
     print("The longest common prefix for the given list \"",strs,"\" is ",longestCommonPrefix(strs))
