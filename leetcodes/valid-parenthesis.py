@@ -59,9 +59,21 @@ s consists of parentheses only '()[]{}'.
 
 '''
 
-def isValid():
-    return
+def isValid(s):
 
+    dicts = {'(':')','{':'}','[':']'}
+    slist = []
+
+    for i in s:
+        if i in '({[':
+            slist.append(i)
+        elif len(slist) == 0 or i != dicts[slist.pop()]:
+            return False
+
+    print(slist)
+    return len(slist) == 0
 
 if __name__ == '__main__':
-    isValid()
+
+    s = "()[]{}"
+    print("The validity of the given set of parenthesis is : ",isValid(s))
