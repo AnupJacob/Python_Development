@@ -42,7 +42,6 @@ s consists only of printable ASCII characters.
 
 '''
 
-''' Brute force solution
 def isPalindrome(s):
     concat_strs = ''
     for i in s.lower():
@@ -51,12 +50,14 @@ def isPalindrome(s):
     rev_strs = reversed(concat_strs)
     print(concat_strs)
 
-    lens = len(concat_strs)-1
+#    lens = len(concat_strs)-1
 
     rev_strs = ''
-#    for j in reversed(concat_strs):
-    for j in range (lens, -1,-1):
-        rev_strs = rev_strs + concat_strs[j]
+    for j in reversed(concat_strs):
+        rev_strs = rev_strs + j
+
+#    for j in range (lens, -1,-1):
+#        rev_strs = rev_strs + concat_strs[j]
 
     print(rev_strs)
 
@@ -79,8 +80,8 @@ def isPalindrome(s):
         return True
     else:
         return False
-
+'''
 if __name__ == '__main__':
-    s = "A man, a plan, a canal: Panama"
-#    s = "race a car"
+#    s = "A man, a plan, a canal: Panama"
+    s = "race a car"
     print("The check for the sentence ",s," is :",isPalindrome(s))
