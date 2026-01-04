@@ -49,12 +49,22 @@ digits does not contain any leading 0's.
 '''
 
 def plusOne(digits):
+    plus_one = 1
+    digit_num = ''
+    for i in digits:
+        digit_num = digit_num + str(i)
 
-    return digits
+    plus_one = plus_one + int(digit_num)
+    digit_plus = list(str(plus_one))
+    new_list = []
+    for i in digit_plus:
+        new_list.append(int(i))
+
+    return new_list
 
 
 if __name__ == '__main__':
 
-
     digits = [4,3,2,1]
+
     print("The updated array of integer with the largest integer number added plus one is :",plusOne(digits))
