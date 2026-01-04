@@ -42,6 +42,7 @@ s consists only of printable ASCII characters.
 
 '''
 
+''' Brute force solution
 def isPalindrome(s):
     concat_strs = ''
     for i in s.lower():
@@ -64,9 +65,22 @@ def isPalindrome(s):
     else:
         return False
 
+'''
+def isPalindrome(s):
+    concat_strs = []
+    rev_strs = []
+    for i in s.lower():
+        if i.isalnum():
+            concat_strs.append(i)
+    for j in reversed(concat_strs):
+        rev_strs.append(j)
 
+    if rev_strs == concat_strs:
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
-#    s = "A man, a plan, a canal: Panama"
-    s = "race a car"
+    s = "A man, a plan, a canal: Panama"
+#    s = "race a car"
     print("The check for the sentence ",s," is :",isPalindrome(s))
