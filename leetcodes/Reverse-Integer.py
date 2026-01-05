@@ -37,13 +37,59 @@ Constraints:
 
 '''
 
+'''
+# Brute force solution
+def reverse(x):
+    listx = list(str(x))
+    revx = ''
+
+    if '-' in listx:
+        revx = '-' + revx
+        listx.remove('-')
+    listx.reverse()
+
+    for i in listx:
+        revx = revx + i
+
+    revx = int(revx)
+
+    print(pow(2,31))
+
+    if (revx >= (pow(2,31)-1)) or (revx < -pow(2,31)):
+        return 0
+
+    return revx
+
+# brute force approach 2
+def reverse(x):
+    revx = ''
+    x = int(x)
+    if (x < 0):
+        revx = '-' + revx
+
+    absx = str(abs(x))
+    revx = ''.join(reversed(absx))
+    revx = int(revx)
+
+    if (revx >= (pow(2, 31) - 1)) or (revx < -(pow(2, 31))):
+            return 0
+
+    return revx
+
+'''
 def reverse(x):
 
-    return x
+    if x < 0:
+        revx = -1 * int(str(x)[1:][::-1])
+    else:
+        revx = int(str(x)[::-1])
 
+    if (revx >= (pow(2, 31) - 1)) or (revx < -(pow(2, 31))):
+            return 0
+
+    return revx
 
 if __name__ == '__main__':
 
     x = -321
-
-    print("The reversed signed result of the given number is : ",reverse(x))
+    print("The reversed signed result of the given number ",x," is : ",reverse(x))
