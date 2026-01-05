@@ -45,12 +45,16 @@ Constraints:
 
 # can be done using array and set, but set is faster than using array - array(1 ms) set(0 ms) when run on leetcodes website
 def isHappy(n):
-    nlist = []
+#    nlist = []
+    nset = set()
     strn = str(n)
     print(strn)
-    while strn not in nlist:
-        nlist.append(strn)
-        print(nlist)
+#    while strn not in nlist:
+#        nlist.append(strn)
+#        print(nlist)
+    while strn not in nset:
+        nset.add(strn)
+        print(nset)
         sumn = 0
         for i in strn:
             sumn = sumn + int(i)**2
