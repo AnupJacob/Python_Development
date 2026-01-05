@@ -44,9 +44,10 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 
 '''
-
+'''
 #Brute force solution
 def singleNumber(nums):
+
     list = []
     for i in nums:
         if i not in list:
@@ -59,6 +60,14 @@ def singleNumber(nums):
     for j in list:
         strnum = strnum + str(j)
     return strnum
+
+'''
+# Optimized solution
+def singleNumber(nums):
+    checknum = 0
+    for i in nums:
+        checknum ^= i
+    return checknum
 
 
 if __name__ == '__main__':
