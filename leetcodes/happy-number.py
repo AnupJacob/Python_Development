@@ -27,10 +27,10 @@ Example 1:
 Input: n = 19
 Output: true
 Explanation:
-12 + 92 = 82
-82 + 22 = 68
-62 + 82 = 100
-12 + 02 + 02 = 1
+1**2 + 9**2 = 82
+8**2 + 2**2 = 68
+6**2 + 8**2 = 100
+1**2 + 0**2 + 0**2 = 1
 Example 2:
 
 Input: n = 2
@@ -43,13 +43,27 @@ Constraints:
 
 '''
 
+# can be done using array and set, but set is faster than using array - array(1 ms) set(0 ms) when run on leetcodes website
 def isHappy(n):
+    nlist = []
+    strn = str(n)
+    print(strn)
+    while strn not in nlist:
+        nlist.append(strn)
+        print(nlist)
+        sumn = 0
+        for i in strn:
+            sumn = sumn + int(i)**2
+            print("The sum is :",sumn)
 
-    return True
+        if sumn == 1:
+            return True
+        strn = str(sumn)
 
+    return False
 
 if __name__ == '__main__':
 
     n = 19
 
-    print("THe check for happy number for the integer number ",n," is :",isHappy(n))
+    print("The check for happy number for the integer number ",n," is :",isHappy(n))
