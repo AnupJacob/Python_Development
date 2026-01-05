@@ -35,9 +35,15 @@ haystack and needle consist of only lowercase English characters.
 
 '''
 
+# Optimised solution for the problem
 def strStr(haystack, needle):
 
-    return 1
+    print("String to be checked is \"",needle,"\" inside the string : \"",haystack,"\"")
+
+    if needle in haystack:
+        return haystack.find(needle)
+    else:
+        return -1
 
 
 if __name__ == '__main__':
