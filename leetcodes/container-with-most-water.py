@@ -40,7 +40,7 @@ n == height.length
 0 <= height[i] <= 104
 
 '''
-
+# Optimised solution
 def maxArea(height):
     i = 0
     j = len(height) - 1
