@@ -37,7 +37,7 @@ The input is generated such that answer[i] is guaranteed to fit in a 32-bit inte
 
 '''
 
-
+# Optimised solution
 def productExceptSelf(nums):
     numlen = len(nums)
     answer = [1]*numlen
