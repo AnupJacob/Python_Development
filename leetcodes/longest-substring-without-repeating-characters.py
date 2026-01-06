@@ -39,11 +39,23 @@ Constraints:
 s consists of English letters, digits, symbols and spaces.
 
 '''
-
+#brute force solution
 def lengthOfLongestSubstring(s):
-    return s
+    strlen = len(s)
+    maxcount = 0
+    for i in range (strlen):
+        strset = set()
+        for j in range(i,strlen):
+            if s[j] not in strset:
+                strset.add(s[j])
+                maxcount = max(maxcount,j-i+1)
+            else:
+                break
+
+    return maxcount
 
 
 if __name__ == '__main__':
-    s = "abcabcbb"
+#    s = "abcabcbb"
+    s = "aab"
     print("The length of the longest substring is : ",lengthOfLongestSubstring(s))
