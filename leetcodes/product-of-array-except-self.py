@@ -37,9 +37,20 @@ The input is generated such that answer[i] is guaranteed to fit in a 32-bit inte
 
 '''
 
-def productExceptSelf(nums):
-    return nums
 
+def productExceptSelf(nums):
+    numlen = len(nums)
+    answer = [0]*numlen
+    left_prod = 1
+    right_prod = 1
+    for i in range(numlen):
+        answer[i] = left_prod
+        left_prod *= nums[i]
+    for j in range(numlen-1, -1,-1):
+        answer[j] *= right_prod
+        right_prod *= nums[j]
+
+    return answer
 
 if __name__ == '__main__':
 
