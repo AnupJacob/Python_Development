@@ -40,7 +40,7 @@ The input is generated such that answer[i] is guaranteed to fit in a 32-bit inte
 
 def productExceptSelf(nums):
     numlen = len(nums)
-    answer = [0]*numlen
+    answer = [1]*numlen
     left_prod = 1
     right_prod = 1
     for i in range(numlen):
