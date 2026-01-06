@@ -42,8 +42,27 @@ n == height.length
 '''
 
 def maxArea(height):
+    i = 0
+    j = len(height) - 1
+    area = 0
+    maxarea = 0
+    print("i = ",i)
+    print("j = ",j)
+    print(height)
+    while i <= j:
+        if height[i] > height[j]:
+            area = (j-1) * height[j]
+            j -= 1
+        else:
+            area = (j-i) * height[i]
+            i += 1
+        if area > maxarea:
+            maxarea = area
 
-    return height
+    print(maxarea)
+
+    return maxarea
+
 
 
 if __name__ == '__main__':
