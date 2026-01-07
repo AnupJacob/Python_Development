@@ -37,6 +37,7 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 
 '''
+'''
 #brute force solution using for loop
 def search(nums,target):
     if target not in nums:
@@ -44,6 +45,16 @@ def search(nums,target):
     for j in range(len(nums)):
         if target == nums[j]:
             return j
+'''
+
+#Brute force soultion using while loop
+def search(nums,target):
+    i = 0
+    while i <= len(nums):
+        if target == nums[i]:
+            return i
+        i +=1
+    return target
 
 if __name__ == '__main__':
     nums = [-1, 0, 3, 5, 9, 12]
