@@ -28,7 +28,7 @@ Constraints:
 s and t consist of lowercase English letters.
 
 '''
-
+'''
 # Brute force solution
 def isAnagram(s,t):
 
@@ -48,11 +48,29 @@ def isAnagram(s,t):
     else:
         return False
 
-    return True
+'''
+# Optimised solution
+from collections import Counter
 
+def isAnagram(s,t):
+    print(Counter(s))
+    print(Counter(t))
+
+    tcount = Counter(t)
+    scount = Counter(s)
+
+    if tcount == scount:      # 7 ms execution time
+        return True
+    else:
+        return False
+
+# return Counter(s) == Counter(t)       # 3 ms execution time with just one line and an import Counter from collections
 
 if __name__ == '__main__':
-    s = "anagram"
-    t = "nagaram"
+#    s = "anagram"
+#    t = "nagaram"
+
+    s = "rat"
+    t = "cat"
 
     print(" The given strings ",s," and ",t," is a ",isAnagram(s,t)," anagram")
