@@ -35,7 +35,7 @@ Constraints:
 -104 <= nums[i] <= 104
 
 '''
-
+'''
 #Brute force soultion with 42 ms time execution with O(n) complexity
 def findKthLargest(nums,k):
 #    sortednums = sorted(nums,reverse = True)
@@ -47,22 +47,12 @@ def findKthLargest(nums,k):
 #            return sortednums[k-1]
             return nums[k-1]
 '''
-def midvalue(max_value,min_value):
-    mid_value = (min_value + max_value)//2
-    return mid_value
+#using heapq
+import heapq
 
 def findKthLargest(nums,k):
-    max_value = max(nums)
-    min_value = min(nums)
-    print(max_value)
-    print(min_value)
-    print(midvalue(max_value,min_value))
+    return heapq.nlargest(k,nums)[-1]
 
-    for i in range(len(nums)):
-        
-
-    return True
-'''
 if __name__ == '__main__':
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
