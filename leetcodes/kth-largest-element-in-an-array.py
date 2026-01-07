@@ -35,19 +35,34 @@ Constraints:
 -104 <= nums[i] <= 104
 
 '''
-'''
+
 #Brute force soultion with 42 ms time execution with O(n) complexity
 def findKthLargest(nums,k):
-    sortednums = sorted(nums, reverse = True)
-    print(sortednums)
-    for i in range(len(sortednums)):
+#    sortednums = sorted(nums,reverse = True)
+#    print(sortednums)
+    nums.sort(reverse=True)
+    for i in range(len(nums)):
+        print(nums)
         if i == k-1:
-            return sortednums[k-1]
+#            return sortednums[k-1]
+            return nums[k-1]
 '''
+def midvalue(max_value,min_value):
+    mid_value = (min_value + max_value)//2
+    return mid_value
+
 def findKthLargest(nums,k):
+    max_value = max(nums)
+    min_value = min(nums)
+    print(max_value)
+    print(min_value)
+    print(midvalue(max_value,min_value))
+
+    for i in range(len(nums)):
+        
 
     return True
-
+'''
 if __name__ == '__main__':
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
