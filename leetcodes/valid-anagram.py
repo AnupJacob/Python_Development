@@ -51,8 +51,9 @@ def isAnagram(s,t):
 '''
 # Optimised solution
 from collections import Counter
-
+'''
 def isAnagram(s,t):
+
     print(Counter(s))
     print(Counter(t))
 
@@ -63,14 +64,15 @@ def isAnagram(s,t):
         return True
     else:
         return False
-
-# return Counter(s) == Counter(t)       # 3 ms execution time with just one line and an import Counter from collections
+'''
+def isAnagram(s,t):
+ return Counter(s) == Counter(t)       # Best optimised 3 ms execution time with just one line and an import Counter from collections
 
 if __name__ == '__main__':
-#    s = "anagram"
-#    t = "nagaram"
+    s = "anagram"
+    t = "nagaram"
 
-    s = "rat"
-    t = "cat"
+#    s = "rat"
+#    t = "cat"
 
     print(" The given strings ",s," and ",t," is a ",isAnagram(s,t)," anagram")
