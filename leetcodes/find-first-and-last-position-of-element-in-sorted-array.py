@@ -34,15 +34,27 @@ nums is a non - decreasing array.
 -109 <= target <= 109
 
 '''
-
+# Simple solution with O(n) time complexity, took 0 ms to run
 def searchRange(nums,target):
 
-    return True
+    first = -1
+    last = -1
+    numslen = len(nums)
+
+    for i in range(numslen):
+        if target == nums[i]:
+            if first == -1:
+                first = i
+            last = i
+
+
+    return [first,last]
 
 
 
 if __name__ == '__main__':
-    nums = [5,7,7,8,8,10]
-    target = 8
-
-    searchRange(nums,target)
+#    nums = [5,7,7,8,8,10]
+    nums = [1]
+#    target = 8
+    target = 0
+    print("The first and the last position of the search target is ",searchRange(nums,target))
