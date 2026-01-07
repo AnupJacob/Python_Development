@@ -29,8 +29,24 @@ s and t consist of lowercase English letters.
 
 '''
 
-
+# Brute force solution
 def isAnagram(s,t):
+
+    slenlist = len(s)
+    tlenlist = len(t)
+    slist = list(s)
+    tlist = list(t)
+    if slenlist == tlenlist:
+        print(slist)
+        print(tlist)
+        tsort = sorted(tlist)
+        ssort = sorted(slist)
+        print(tsort)
+        print(ssort)
+        if tsort == ssort:
+            return True
+    else:
+        return False
 
     return True
 
