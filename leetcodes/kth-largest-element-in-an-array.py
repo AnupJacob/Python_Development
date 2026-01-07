@@ -35,7 +35,7 @@ Constraints:
 -104 <= nums[i] <= 104
 
 '''
-'''
+
 #Brute force soultion with 42 ms time execution with O(n) complexity
 def findKthLargest(nums,k):
 #    sortednums = sorted(nums,reverse = True)
@@ -52,7 +52,7 @@ import heapq
 
 def findKthLargest(nums,k):
     return heapq.nlargest(k,nums)[-1]
-
+'''
 if __name__ == '__main__':
     nums = [3, 2, 1, 5, 6, 4]
     k = 2
