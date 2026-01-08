@@ -4,7 +4,7 @@
 # Author        : Anup Jacob
 # Version       : v1.0
 # Created Date  : 05/01/2026
-# Modified Date : 05/01/2026
+# Modified Date : 08/01/2026
 # Description   :
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
@@ -35,7 +35,7 @@ class ListNode:
          self.next = next
 
 class Solution:
-    def deleteDuplicates(head):
+    def deleteDuplicates(self,head):
         if not head:
             return head
 
@@ -48,15 +48,26 @@ class Solution:
 
         return head
 
-    if __name__ == '__main__':
-        node1 = ListNode(1)
-        node2 = ListNode(1)
-        node3 = ListNode(2)
-        node4 = ListNode(3)
-        node5 = ListNode(3)
-        node1.next = node2
-        node2.next = node3
-        node3.next = node4
-        node4.next = node5
+def print_linked_list(head):
+    current = head
+    while current:
+       print(current.val, end=" -> " if current.next else "")
+       current = current.next
+    print(" -> Null")
 
+if __name__ == '__main__':
+    node1 = ListNode(1)
+    node2 = ListNode(1)
+    node3 = ListNode(2)
+    node4 = ListNode(3)
+    node5 = ListNode(3)
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
+    node4.next = node5
 
+    print_linked_list(node1)
+
+    solution = Solution()
+    new_head = solution.deleteDuplicates(node1)
+    print_linked_list(new_head)
