@@ -34,6 +34,7 @@ The number of nodes in the list is sz.
 
 '''
 
+#Brute force solution
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -42,18 +43,25 @@ class ListNode:
 
 class Solution:
     def removeNthFromEnd(head,n):
-        return
+        current = head
+        count = 0
+        while current.next:
+            count += 1
+            if count == n:
+                current.next = current.next.next
+            current = current.next
 
-def printlist(self):
-    current =self
+
+def printlist(head):
+    current = head
     while current:
         print(current.val, end=" -> " if current.next else "")
         current = current.next
     print(" -> Null")
 
 if __name__ == '__main__':
-    head = [1, 2, 3, 4, 5]
     n = 2
+#    n = 1
     node1 = ListNode(1)
     node2 = ListNode(2)
     node3 = ListNode(3)
@@ -66,4 +74,5 @@ if __name__ == '__main__':
     node4.next = node5
 
     printlist(node1)
-#    removeNthFromEnd(head,n)
+    Solution.removeNthFromEnd(node1, n)
+    printlist(node1)
