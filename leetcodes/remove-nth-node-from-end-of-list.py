@@ -42,15 +42,34 @@ class ListNode:
         self.next = next
 
 class Solution:
+    '''
+#This removes the nth element from the begining and not the end, so rework required
     def removeNthFromEnd(head,n):
         current = head
         count = 0
-        while current.next:
+        while current and current.next:
             count += 1
             if count == n:
                 current.next = current.next.next
             current = current.next
+'''
+#Optimal solution
+    def removeNthFromEnd(head, n):
+        first = head
+        last = head
 
+        for i in range(n):
+            first = first.next
+
+        if not first:
+            return head.next
+
+        while first.next:
+            last = last.next
+            first = first.next
+
+        last.next = last.next.next
+        return head
 
 def printlist(head):
     current = head
@@ -60,8 +79,8 @@ def printlist(head):
     print(" -> Null")
 
 if __name__ == '__main__':
-    n = 2
-#    n = 1
+#    n = 2
+    n = 1
     node1 = ListNode(1)
     node2 = ListNode(2)
     node3 = ListNode(3)
