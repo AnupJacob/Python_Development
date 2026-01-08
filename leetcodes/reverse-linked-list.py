@@ -33,16 +33,27 @@ Follow up: A linked list can be reversed either iteratively or recursively. Coul
 
 '''
 
+#optimized solution with 0 ms time execution
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 class Solution:
-    def reverseList(head):
-        return head
+    def reverseList(head):  #1
+        previous = None
+        current = head      # current = 1
 
-def printlist(head):
-    current = head
+        while current:
+            tempvar = current.next  #tempvar = 2
+            current.next = previous #current.next = None
+            previous = current      # previous = 1
+            current = tempvar       #current = 2
+
+        print("Node change ",previous.val)
+        return previous
+
+def printlist(self):
+    current = self
     while current:
        print(current.val, end=" -> " if current.next else "")
        current = current.next
@@ -61,3 +72,5 @@ if __name__ == '__main__':
     node4.next = node5
 
     printlist(node1)
+
+    printlist(Solution.reverseList(node1))
