@@ -43,14 +43,42 @@ k is in the range [1, the number of unique elements in the array].
 
 '''
 
-def topKFrequent(nums,k):
+#My initial solution, 10/23 tescases passed needs checking again
+from collections import Counter
 
-    return True
+def topKFrequent(nums,k):
+    dictnums = {}
+    numlist = list()
+    count = Counter(nums)
+    tempcount = 0
+    newlist = list()
+
+    for i, j in enumerate(nums):
+        if j not in numlist:
+            print(j, " count of : ",count[j])
+            numlist.append(j)
+            dictnums[j] = count[j]
+
+
+            for m,n in dictnums.items():
+                print(m, " : ",n)
+                if tempcount < k and m not in newlist:
+                    newlist.append(m)
+                    tempcount += 1
+
+
+    print(newlist)
+
+    return newlist
 
 
 
 if __name__ == '__main__':
-    nums = [1, 1, 1, 2, 2, 3]
+    nums = [3,0,1,0]
+#    nums = [1, 1, 1, 2, 2, 3]
+    nums = [1,2,1,2,1,2,3,1,3,2]
+
     k = 2
+#    k = 1
 
     print("The top frequent ",k," number of elements in the given list are : ",topKFrequent(nums,k))
