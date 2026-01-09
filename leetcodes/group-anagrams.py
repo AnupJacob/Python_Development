@@ -47,11 +47,15 @@ Constraints:
 strs[i] consists of lowercase English letters.
 
 '''
+from collections import defaultdict
 
 def groupAnagrams(strs):
+    dummydict = defaultdict(list)
 
-    return strs
-
+    for i in strs:
+        key = "".join(sorted(i))
+        dummydict[key].append(i)
+    return list(dummydict.values())
 
 if __name__ == '__main__':
     strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
