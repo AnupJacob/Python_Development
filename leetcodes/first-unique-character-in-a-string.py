@@ -38,6 +38,7 @@ Constraints:
 s consists of only lowercase English letters.
 
 '''
+'''
 #Solution 1
 def firstUniqChar(s):
     dicts = {}
@@ -49,6 +50,20 @@ def firstUniqChar(s):
     for j in range(len(s)):
         if dicts[s[j]] == 1:
             return j
+
+    return -1
+'''
+#solution 2 - somewhat optimal solution beating 90% 42 ms time execution
+from collections import Counter
+
+def firstUniqChar(s):
+
+    count = Counter(s)
+    for i,j in enumerate(s):
+        print(i," : ",i)
+        print(j," : ",j)
+        if count[j] == 1:
+            return i
 
     return -1
 
