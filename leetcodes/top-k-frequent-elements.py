@@ -43,6 +43,8 @@ k is in the range [1, the number of unique elements in the array].
 
 '''
 
+
+'''
 #My initial solution, 10/23 tescases passed needs checking again
 from collections import Counter
 
@@ -70,8 +72,19 @@ def topKFrequent(nums,k):
     print(newlist)
 
     return newlist
+'''
+#Optimsed solution using lambda
+def topKFrequent(nums,k):
+    listnum = list()
+    count = 0
+    dictnums = {}
 
+    for i in nums:
+        dictnums[i] = dictnums.get(i, 0) + 1
 
+    dictnums = sorted(dictnums.items(), key=lambda num: num[1], reverse=True)
+
+    return [num[0] for num in dictnums[:k]]
 
 if __name__ == '__main__':
     nums = [3,0,1,0]
