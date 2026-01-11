@@ -59,9 +59,6 @@ def isPalindrome(x):
 #Brute force solution 2 using slicing
 def isPalindrome(x):
 
-    if x< 0:
-        return False
-
     absval = str(abs(x))
     revabsx = absval[::-1]
 
@@ -69,6 +66,15 @@ def isPalindrome(x):
     if revabsx == absval:
         return True
     return False
+'''
+#Brute force solution 2 using slicing optimised
+def isPalindrome(x):
+
+    val = rev = str(x)
+    rev = val[::-1]
+
+    return val == rev
+
 '''
 #Better optimised solution not converting to string
 def isPalindrome(x):
@@ -83,7 +89,7 @@ def isPalindrome(x):
         absx = absx // 10
 
     return rev == x
-
+'''
 if __name__ == '__main__':
     x = 121
     print("The result check for the given number ",x," is : ",isPalindrome(x))
