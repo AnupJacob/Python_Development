@@ -70,6 +70,7 @@ def isPalindrome(x):
         return True
     return False
 '''
+#Better optimised solution not converting to string
 def isPalindrome(x):
     rev = 0
 
