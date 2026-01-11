@@ -35,7 +35,7 @@ Follow up: Could you solve it without converting the integer to a string?
 
 '''
 
-
+'''
 #Brute force solution
 def isPalindrome(x):
     revlistx = list()
@@ -54,8 +54,21 @@ def isPalindrome(x):
     if revlistx == listx:
         return True
     return False
+'''
+#Brute force solution 2 using slicing
+def isPalindrome(x):
 
+    if x< 0:
+        return False
+
+    absval = str(abs(x))
+    revabsx = absval[::-1]
+
+    print(revabsx)
+    if revabsx == absval:
+        return True
+    return False
 
 if __name__ == '__main__':
-    x = -121
+    x = 10
     print("The result check for the given number ",x," is : ",isPalindrome(x))
