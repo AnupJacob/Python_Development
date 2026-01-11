@@ -35,10 +35,27 @@ Follow up: Could you solve it without converting the integer to a string?
 
 '''
 
+
+#Brute force solution
 def isPalindrome(x):
-    return
+    revlistx = list()
+    if x < 0:
+        return False
+
+    listx = list(str(abs(x)))
+
+    print(listx)
+
+    for i in range(len(listx)-1,-1,-1):
+        revlistx.append(listx[i])
+
+    print(revlistx)
+
+    if revlistx == listx:
+        return True
+    return False
 
 
 if __name__ == '__main__':
-    x = 121
-    isPalindrome(x)
+    x = -121
+    print("The result check for the given number ",x," is : ",isPalindrome(x))
