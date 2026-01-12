@@ -14,10 +14,9 @@ def isPalindrome(x):
         return False
     strx = str(x)
     revx = strx[::-1]
-
     return revx == strx
 
 
 if __name__ == '__main__':
-    x = 123421
+    x = 12321
     print("The status check for palindrome for the number ",x," is : ",isPalindrome(x))
