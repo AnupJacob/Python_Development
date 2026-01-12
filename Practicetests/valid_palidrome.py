@@ -8,7 +8,7 @@
 # Description   :
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
-
+#brute force with for and slicing
 def isPalindrome(s):
     s = s.lower()
     slist = list()
