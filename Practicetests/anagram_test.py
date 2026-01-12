@@ -9,9 +9,12 @@
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
 
-from collections import Counter
+#from collections import Counter
 def isAnagram(s,t):
-    return Counter(s) == Counter(t)
+#    return Counter(s) == Counter(t)
+
+    return sorted(s) == sorted(t)
+
 
 
 if __name__ == '__main__':
