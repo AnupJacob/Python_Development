@@ -8,14 +8,19 @@
 # Description   :
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
-
-#from collections import Counter
+'''
+#using sort function
 def isAnagram(s,t):
-#    return Counter(s) == Counter(t)
+    slist = list(s)
+    slist.sort()
+    tlist = list(t)
+    tlist.sort()
 
+    return slist == tlist
+'''
+#using sorted function
+def isAnagram(s,t):
     return sorted(s) == sorted(t)
-
-
 
 if __name__ == '__main__':
     s = "anagram"
