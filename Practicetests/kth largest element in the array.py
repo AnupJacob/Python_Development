@@ -9,13 +9,19 @@
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
 
+#kth element using sorted function
 def findKthLargest(nums, k):
     sortednum = sorted(nums, reverse=True)
-    return sortednum[k-1]
-
+    return sortednum[k - 1]
+'''
+#kth element using sort function
+def findKthLargest(nums, k):
+    nums.sort(reverse=True)
+    return nums[k-1]
+'''
 if __name__ == '__main__':
-#    nums = [3, 2, 1, 5, 6, 4]
-    nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
-    k = 4
-#    k = 2
+    nums = [3, 2, 1, 5, 6, 4]
+#    nums = [3, 2, 3, 1, 2, 4, 5, 5, 6]
+#    k = 4
+    k = 2
     print("The kth largest element in the array - ",nums," is : ",findKthLargest(nums, k))
