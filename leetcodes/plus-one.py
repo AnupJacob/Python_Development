@@ -4,7 +4,7 @@
 # Author        : Anup Jacob
 # Version       : v1.0
 # Created Date  : 04/01/2026
-# Modified Date : 04/01/2026
+# Modified Date : 13/01/2026
 # Description   :
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
@@ -47,7 +47,8 @@ Constraints:
 digits does not contain any leading 0's.
 
 '''
-
+'''
+# brute force solution
 def plusOne(digits):
     plus_one = 1
     digit_num = ''
@@ -61,6 +62,17 @@ def plusOne(digits):
         new_list.append(int(i))
 
     return new_list
+'''
+#smaller approach
+def plusOne(digits):
+    strnew = ''
+    for i in digits:
+        strnew = strnew + str(i)
+    print(strnew)
+    resultint  = int(strnew) + 1
+    print(resultint)
+    return list(str(resultint))
+
 
 
 if __name__ == '__main__':

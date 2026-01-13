@@ -47,7 +47,7 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(list1,list2):
-        dummyNode = ListNode(-1)
+        dummyNode = ListNode(0)
         temp = dummyNode
         current1 = list1
         current2 = list2
