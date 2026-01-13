@@ -44,7 +44,6 @@ n == height.length
 def maxArea(height):
     i = 0
     j = len(height) - 1
-    area = 0
     maxarea = 0
     print("i = ",i)
     print("j = ",j)
