@@ -42,7 +42,7 @@ def maxArea(height):
     print(height)
     while i <= j:
         if height[i] > height[j]:
-            area = (j-1) * height[j]
+            area = (j-i) * height[j]
             j -= 1
         else:
             area = (j-i) * height[i]
