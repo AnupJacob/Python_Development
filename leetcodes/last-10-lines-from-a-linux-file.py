@@ -8,7 +8,7 @@
 # Description   :
 # Licensing     : Anup Jacob, DevOps
 # ----------------------------------
-
+'''
 #For small files
 def print_last_10_lines(file_path):
     with open(file_path, 'r') as file:
@@ -17,12 +17,20 @@ def print_last_10_lines(file_path):
 #Without slicing
         for i in range(len(lines) - 10, len(lines)):
             print(lines[i], end=" -> ")
-'''
+
 #With Slicing
     for line in lines[-10:]:
         print(line, end=" -> ")
 '''
+#For handling very large files
+from collections import deque
 
+def print_last_10_lines(file_path):
+    with open(file_path, 'r') as f:
+        last_lines = deque(f, maxlen=10)
+
+    for line in last_lines:
+        print(line.rstrip(), end= " - > ")
 
 if __name__ == '__main__':
     file_path = "D:\GIT Repo\Git Main\Python_Development\leetcodes\Youtubescriptsample.txt"
