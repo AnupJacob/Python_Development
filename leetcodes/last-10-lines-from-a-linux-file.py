@@ -14,8 +14,14 @@ def print_last_10_lines(file_path):
     with open(file_path, 'r') as file:
         lines = file.read().splitlines()
 
+#Without slicing
+        for i in range(len(lines) - 10, len(lines)):
+            print(lines[i], end=" -> ")
+'''
+#With Slicing
     for line in lines[-10:]:
         print(line, end=" -> ")
+'''
 
 
 if __name__ == '__main__':
