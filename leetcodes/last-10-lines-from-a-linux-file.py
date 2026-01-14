@@ -33,5 +33,5 @@ def print_last_10_lines(file_path):
         print(line.rstrip(), end= " - > ")
 
 if __name__ == '__main__':
-    file_path = "D:\GIT Repo\Git Main\Python_Development\leetcodes\Youtubescriptsample.txt"
+    file_path = ".\Youtubescriptsample.txt"
     print_last_10_lines(file_path)
