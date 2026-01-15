@@ -32,4 +32,4 @@ jobs:
           name: Latest Package
           files: repo-package.zip
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
