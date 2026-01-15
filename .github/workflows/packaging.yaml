@@ -8,9 +8,28 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
       - name: Checkout code contents in the repository
         uses: actions/checkout@v4
+
+      - name: Create ZIP archive
+        shell: cmd
+        run: |
+          7z a leetcode-package.zip leetcodes
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: leetcode-package
+          path: leetcode-package.zip
+
+      - name: Create or update GitHub Release for reusable link
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Package
+          files: leetcode-package.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
