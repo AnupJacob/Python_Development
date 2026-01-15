@@ -25,5 +25,11 @@ jobs:
           name: repo-package
           path: repo-package.zip
 
-      - name: Output download link
-        run: echo https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - name: Create or update GitHub Release for reusable link
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Package
+          files: repo-package.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
