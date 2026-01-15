@@ -13,23 +13,17 @@ jobs:
     steps:
       - name: Checkout code contents in the repository
         uses: actions/checkout@v4
-      - name: Create RAR archive
+
+      - name: Create ZIP archive
         shell: cmd
         run: |
-          set RAR_PATH="C:\Program Files\WinRAR\rar.exe"
-          if not exist %RAR_PATH% (
-            echo WinRAR not found
-            exit /b 1
-          )
-          %RAR_PATH% a -r repo-package.rar *
+          7z a repo-package.zip . -xr!.git
 
-      - name: Upload RAR artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: repo-rar-package
-          path: repo-package.rar
+          name: repo-package
+          path: repo-package.zip
 
       - name: Output download link
-        run: |
-          echo Artifact download link:
-          echo https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: echo https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
