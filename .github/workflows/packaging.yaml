@@ -17,13 +17,13 @@ jobs:
       - name: Create ZIP archive
         shell: cmd
         run: |
-          7z a repo-package.zip . -xr!.git
+          7z a leetcode-package.zip ./leetcode/*
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: repo-package
-          path: repo-package.zip
+          name: leetcode-package
+          path: leetcode-package.zip
 
       - name: Create or update GitHub Release for reusable link
         uses: softprops/action-gh-release@v2
